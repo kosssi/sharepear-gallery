@@ -4,7 +4,10 @@
   "description": "Calculate each picture size to build perfect gallery.",
   "main": "sharepear-gallery-picture-size.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard && mocha --compilers js:babel-register --colors"
+  },
+  "engines": {
+    "node": "6"
   },
   "repository": {
     "type": "git",
@@ -21,8 +24,16 @@
   "bugs": {
     "url": "https://github.com/kosssi/sharepear-gallery-picture-size/issues"
   },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "homepage": "https://github.com/kosssi/sharepear-gallery-picture-size#readme",
   "devDependencies": {
+    "babel-preset-es2015": "6.18.0",
+    "babel-register": "6.18.0",
+    "mocha": "3.1.2",
     "standard": "8.5.0"
   }
 }
