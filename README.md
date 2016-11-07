@@ -1,5 +1,7 @@
 # sharepear-gallery-picture-size
 
+![NPM Licence shield](https://img.shields.io/npm/l/sharepear-gallery-picture-size.svg)
+
 Calculate each picture size to build perfect gallery.
 
 Inspired by [Chromatic](http://www.chromatic.io/).
