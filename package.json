@@ -4,7 +4,8 @@
   "description": "Calculate each picture size to build perfect gallery.",
   "main": "sharepear-gallery-picture-size.js",
   "scripts": {
-    "test": "standard && mocha --compilers js:babel-register --colors"
+    "test": "standard && mocha --compilers js:babel-register --colors",
+    "watch": "mocha --compilers js:babel-register --colors -w"
   },
   "engines": {
     "node": "6"
@@ -35,5 +36,8 @@
     "babel-register": "6.18.0",
     "mocha": "3.1.2",
     "standard": "8.5.0"
+  },
+  "dependencies": {
+    "linear-partitioning": "^0.3.1"
   }
 }
