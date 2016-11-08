@@ -2,6 +2,7 @@
 
 ![NPM Licence shield](https://img.shields.io/npm/l/sharepear-gallery-picture-size.svg)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![Build Status](https://travis-ci.org/kosssi/sharepear-gallery-picture-size.svg?branch=master)](https://travis-ci.org/kosssi/sharepear-gallery-picture-size)
 
 Calculate each picture size to build perfect gallery.
 
