@@ -4,8 +4,8 @@
   "description": "Calculate each picture size to build perfect gallery.",
   "main": "./src/index.js",
   "scripts": {
-    "lint": "standard src/ test/",
-    "test": "standard && mocha --compilers js:babel-register --colors",
+    "lint": "standard src/index.js test/index.js",
+    "test": "mocha --compilers js:babel-register --colors",
     "watch": "mocha --compilers js:babel-register --colors -w",
     "build": "mkdir -p build && browserify src/index.js -o build/bundle.js"
   },
@@ -40,12 +40,12 @@
     "linear-partitioning": "0.3.1"
   },
   "devDependencies": {
+    "babel-loader": "6.2.7",
     "babel-plugin-transform-es2015-modules-umd": "6.18.0",
     "babel-preset-es2015": "6.18.0",
     "babel-register": "6.18.0",
-    "babelify": "7.3.0",
-    "browserify": "13.1.1",
     "mocha": "3.1.2",
-    "standard": "8.5.0"
+    "standard": "8.5.0",
+    "webpack": "1.13.3"
   }
 }
