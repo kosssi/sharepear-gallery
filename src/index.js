@@ -15,7 +15,7 @@ function setPicturesRatio (pictures) {
     picture.ratio = picture.width / picture.height
   }
 
-  return pictures
+  return pictures;
 }
 
 /**

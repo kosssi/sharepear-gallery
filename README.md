@@ -1,8 +1,8 @@
-# sharepear-gallery-picture-size
+# sharepear-gallery
 
-![NPM Licence shield](https://img.shields.io/npm/l/sharepear-gallery-picture-size.svg)
+![NPM Licence shield](https://img.shields.io/npm/l/sharepear-gallery.svg)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-[![Build Status](https://travis-ci.org/kosssi/sharepear-gallery-picture-size.svg?branch=master)](https://travis-ci.org/kosssi/sharepear-gallery-picture-size)
+[![Build Status](https://travis-ci.org/kosssi/sharepear-gallery.svg?branch=master)](https://travis-ci.org/kosssi/sharepear-gallery)
 
 Calculate each picture size to build perfect gallery.
 
@@ -10,11 +10,11 @@ Calculate each picture size to build perfect gallery.
 
 Install it on your project:
 
-    npm install --save sharepear-gallery-picture-size
+    npm install --save sharepear-gallery
 
 Import it on your code:
 
-    import { getPicturesSize } from sharepear-gallery-picture-size
+    import { getPicturesSize } from sharepear-gallery
 
 Use it like that:
 

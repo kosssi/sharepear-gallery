@@ -1,18 +1,20 @@
 {
-  "name": "sharepear-gallery-picture-size",
+  "name": "sharepear-gallery",
   "version": "1.0.0",
   "description": "Calculate each picture size to build perfect gallery.",
-  "main": "sharepear-gallery-picture-size.js",
+  "main": "./src/index.js",
   "scripts": {
+    "lint": "standard src/ test/",
     "test": "standard && mocha --compilers js:babel-register --colors",
-    "watch": "mocha --compilers js:babel-register --colors -w"
+    "watch": "mocha --compilers js:babel-register --colors -w",
+    "build": "mkdir -p build && browserify src/index.js -o build/bundle.js"
   },
   "engines": {
     "node": "6"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kosssi/sharepear-gallery-picture-size.git"
+    "url": "git+https://github.com/kosssi/sharepear-gallery.git"
   },
   "keywords": [
     "gallery",
@@ -23,21 +25,27 @@
   "author": "Simon C. <simonc@linux.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/kosssi/sharepear-gallery-picture-size/issues"
+    "url": "https://github.com/kosssi/sharepear-gallery/issues"
   },
   "babel": {
     "presets": [
       "es2015"
+    ],
+    "plugins": [
+      "transform-es2015-modules-umd"
     ]
   },
-  "homepage": "https://github.com/kosssi/sharepear-gallery-picture-size#readme",
+  "homepage": "https://github.com/kosssi/sharepear-gallery#readme",
+  "dependencies": {
+    "linear-partitioning": "0.3.1"
+  },
   "devDependencies": {
+    "babel-plugin-transform-es2015-modules-umd": "6.18.0",
     "babel-preset-es2015": "6.18.0",
     "babel-register": "6.18.0",
+    "babelify": "7.3.0",
+    "browserify": "13.1.1",
     "mocha": "3.1.2",
     "standard": "8.5.0"
-  },
-  "dependencies": {
-    "linear-partitioning": "^0.3.1"
   }
 }
