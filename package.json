@@ -7,7 +7,7 @@
     "lint": "standard src/index.js test/index.js",
     "test": "mocha --compilers js:babel-register --colors",
     "watch": "mocha --compilers js:babel-register --colors -w",
-    "build": "mkdir -p build && browserify src/index.js -o build/bundle.js"
+    "build": "webpack"
   },
   "engines": {
     "node": "6"
