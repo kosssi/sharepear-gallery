@@ -22,15 +22,15 @@ describe('Sharepear Gallery Picture Size', () => {
     })
   })
 
-  describe('getPicturesSize idealHeight', () => {
+  describe('getPicturesSize idealPictureHeight', () => {
     let gallery = getPicturesSize(picture, galleryWidth, 1000 / 3)
 
-    it('should return an object with idealHeight key', () => {
-      assert.ok(gallery.idealHeight)
+    it('should return an object with idealPictureHeight key', () => {
+      assert.ok(gallery.idealPictureHeight)
     })
 
-    it('should return idealHeight with width / 2 arround', () => {
-      assert.equal(gallery.idealHeight, 166.67)
+    it('should return idealPictureHeight with width / 2 arround', () => {
+      assert.equal(gallery.idealPictureHeight, 166.67)
     })
   })
 

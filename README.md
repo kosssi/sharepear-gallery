@@ -29,7 +29,26 @@ Use it like that:
     ]
     const galleryWidth = 1024
     const windowHeight = 768
-    let picturesWithSize = getPicturesSize(pictures, galleryWidth, windowHeight)
+    let sharepearGallery = getPicturesSize(pictures, galleryWidth, windowHeight)
+
+    console.log(sharepearGallery)
+
+It display:
+
+    {
+        galleryWidth: 1024
+        idealPictureHeight: 384
+        partitions: [[100, 100], [100, 100], [100, 100, 100]]
+        pictures: [
+            { idealHeight: 512, idealWidth: 512, height: 1024, ratio: 1, width: 1024 },
+            { idealHeight: 512, idealWidth: 512, height: 512, ratio: 1, width: 512 },
+            { idealHeight: 512, idealWidth: 512, height: 512, ratio: 1, width: 512 },
+            { idealHeight: 512, idealWidth: 512, height: 256, ratio: 1, width: 256 },
+            { idealHeight: 512, idealWidth: 512, height: 256, ratio: 1, width: 256 },
+            { idealHeight: 512, idealWidth: 512, height: 256, ratio: 1, width: 256 },
+            { idealHeight: 512, idealWidth: 512, height: 256, ratio: 1, width: 256 },
+        ]
+    }
 
 # Thanks
 

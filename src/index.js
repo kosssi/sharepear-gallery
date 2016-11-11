@@ -3,7 +3,7 @@ import LinearPartitioning from 'linear-partitioning'
 /**
  * Get Ideal Picture Height
  */
-function getIdealHeight (width) {
+function getIdealPictureHeight (width) {
   return Math.round(width / 2 * 100) / 100
 }
 
@@ -21,11 +21,11 @@ function setPicturesRatio (pictures) {
 /**
  * Get summed width
  */
-function getSummedWidth (pictures, idealHeight) {
+function getSummedWidth (pictures, idealPictureHeight) {
   let summedWidth = 0
 
   for (let picture of pictures) {
-    summedWidth += picture.ratio * idealHeight
+    summedWidth += picture.ratio * idealPictureHeight
   }
 
   return summedWidth
@@ -51,8 +51,8 @@ export function getPicturesSize (pictures, galleryWidth, windowHeight) {
   let picturesWithSize = JSON.parse(JSON.stringify(pictures)) // clone pictures
   picturesWithSize = setPicturesRatio(picturesWithSize)
 
-  const idealHeight = getIdealHeight(windowHeight)
-  const summedWidth = getSummedWidth(picturesWithSize, idealHeight)
+  const idealPictureHeight = getIdealPictureHeight(windowHeight)
+  const summedWidth = getSummedWidth(picturesWithSize, idealPictureHeight)
   const partitions = getPartitions(picturesWithSize, summedWidth, galleryWidth)
 
   let indexStart = 0
@@ -67,9 +67,9 @@ export function getPicturesSize (pictures, galleryWidth, windowHeight) {
 
     for (let i = indexStart; i < indexEnd; i++) {
       var picture = picturesWithSize[i]
-      picture.calculatedWidth =
+      picture.idealWidth =
         Math.round(galleryWidth / summedRatios * picture.ratio * 100) / 100
-      picture.calculatedHeight =
+      picture.idealHeight =
         Math.round(galleryWidth / summedRatios * 100) / 100
     }
 
@@ -79,7 +79,7 @@ export function getPicturesSize (pictures, galleryWidth, windowHeight) {
   return {
     pictures: picturesWithSize,
     galleryWidth: galleryWidth,
-    idealHeight: idealHeight,
+    idealPictureHeight: idealPictureHeight,
     partitions: partitions
   }
 }
