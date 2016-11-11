@@ -3,7 +3,7 @@ import LinearPartitioning from 'linear-partitioning'
 /**
  * Get Perfect Picture Height
  */
-function getPerfectHeight (width) {
+function getIdealHeight (width) {
   return Math.round(width / 2 * 100) / 100
 }
 
@@ -15,17 +15,17 @@ function setPicturesRatio (pictures) {
     picture.ratio = picture.width / picture.height
   }
 
-  return pictures;
+  return pictures
 }
 
 /**
  * Get summed width
  */
-function getSummedWidth (pictures, perfectHeight) {
+function getSummedWidth (pictures, idealHeight) {
   let summedWidth = 0
 
   for (let picture of pictures) {
-    summedWidth += picture.ratio * perfectHeight
+    summedWidth += picture.ratio * idealHeight
   }
 
   return summedWidth
@@ -47,12 +47,12 @@ function getPartitions (pictures, summedWidth, galleryWidth) {
 /**
  * Get pictures size
  */
-function getPicturesSize (pictures, galleryWidth) {
+export function getPicturesSize (pictures, galleryWidth, windowHeight) {
   let picturesWithSize = JSON.parse(JSON.stringify(pictures)) // clone pictures
   picturesWithSize = setPicturesRatio(picturesWithSize)
 
-  const perfectHeight = getPerfectHeight(galleryWidth)
-  const summedWidth = getSummedWidth(picturesWithSize, perfectHeight)
+  const idealHeight = getIdealHeight(windowHeight)
+  const summedWidth = getSummedWidth(picturesWithSize, idealHeight)
   const partitions = getPartitions(picturesWithSize, summedWidth, galleryWidth)
 
   let indexStart = 0
@@ -79,9 +79,7 @@ function getPicturesSize (pictures, galleryWidth) {
   return {
     pictures: picturesWithSize,
     galleryWidth: galleryWidth,
-    perfectHeight: perfectHeight,
+    idealHeight: idealHeight,
     partitions: partitions
   }
 }
-
-export default getPicturesSize

@@ -1,8 +1,9 @@
 /* eslint-env mocha */
 import assert from 'assert'
-import getPicturesSize from '../sharepear-gallery-picture-size'
+import { getPicturesSize } from '../src/index'
 
 let galleryWidth = 1024
+let screenHeight = 768
 let picture = [
   { width: 2048, height: 1024 }
 ]
@@ -10,26 +11,26 @@ let picture = [
 describe('Sharepear Gallery Picture Size', () => {
   describe('getPicturesSize pictures', () => {
     it('should return an object with pictures key', () => {
-      assert.ok(getPicturesSize(picture, galleryWidth).pictures)
+      assert.ok(getPicturesSize(picture, galleryWidth, screenHeight).pictures)
     })
   })
 
   describe('getPicturesSize galleryWidth', () => {
     it('should return an object with galleryWidth key', () => {
-      let gallery = getPicturesSize(picture, galleryWidth)
+      let gallery = getPicturesSize(picture, galleryWidth, screenHeight)
       assert.equal(gallery.galleryWidth, galleryWidth)
     })
   })
 
-  describe('getPicturesSize perfectHeight', () => {
-    let gallery = getPicturesSize(picture, 1000 / 3)
+  describe('getPicturesSize idealHeight', () => {
+    let gallery = getPicturesSize(picture, galleryWidth, 1000 / 3)
 
-    it('should return an object with perfectHeight key', () => {
-      assert.ok(gallery.perfectHeight)
+    it('should return an object with idealHeight key', () => {
+      assert.ok(gallery.idealHeight)
     })
 
-    it('should return perfectHeight with width / 2 arround', () => {
-      assert.equal(gallery.perfectHeight, 166.67)
+    it('should return idealHeight with width / 2 arround', () => {
+      assert.equal(gallery.idealHeight, 166.67)
     })
   })
 
