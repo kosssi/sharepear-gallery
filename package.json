@@ -1,7 +1,7 @@
 {
   "name": "sharepear-gallery",
   "version": "1.0.0",
-  "description": "Calculate each picture size to build perfect gallery.",
+  "description": "Calculate each picture size to build ideal gallery.",
   "main": "./src/index.js",
   "scripts": {
     "lint": "standard src/index.js test/index.js",

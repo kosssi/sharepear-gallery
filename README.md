@@ -4,7 +4,7 @@
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Build Status](https://travis-ci.org/kosssi/sharepear-gallery.svg?branch=master)](https://travis-ci.org/kosssi/sharepear-gallery)
 
-Calculate each picture size to build perfect gallery.
+Calculate each picture size to build ideal gallery.
 
 # How it work
 
@@ -28,7 +28,8 @@ Use it like that:
       { width: 256, height: 256 }
     ]
     const galleryWidth = 1024
-    let picturesWithSize = getPicturesSize(pictures, galleryWidth)
+    const windowHeight = 768
+    let picturesWithSize = getPicturesSize(pictures, galleryWidth, windowHeight)
 
 # Thanks
 

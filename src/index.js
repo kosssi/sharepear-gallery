@@ -1,7 +1,7 @@
 import LinearPartitioning from 'linear-partitioning'
 
 /**
- * Get Perfect Picture Height
+ * Get Ideal Picture Height
  */
 function getIdealHeight (width) {
   return Math.round(width / 2 * 100) / 100
